@@ -1,7 +1,7 @@
 POC: Dynamic Spring Configuration
 =================================
 
-Spring Boot provides built-in features to allow you to reload configuration from a Spring Cloud Config server. For example, if you have configured the logging level in your `application.yml` file, e.g.
+Spring Boot Actuator provides built-in features to allow you to reload configuration from a Spring Cloud Config server. For example, if you have configured the logging level in your `application.yml` file, e.g.
 ```yml
 logging.level.com.kelseymckenna: DEBUG
 ```
