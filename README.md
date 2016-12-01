@@ -1,13 +1,13 @@
 POC: Dynamic Spring Configuration
 =================================
 
-Springboot provides built-in features to allow you to reload configuration from a Spring Cloud Config server. For example, if you have configured the logging level in your `application.yml` file, e.g.
+Spring Boot provides built-in features to allow you to reload configuration from a Spring Cloud Config server. For example, if you have configured the logging level in your `application.yml` file, e.g.
 ```yml
 logging.level.com.kelseymckenna: DEBUG
 ```
-you can change this in a git-tracked repository, then your Spring Cloud Config server will register the change, and Springboot applications can synchronise with this change.
+you can change this in a git-tracked repository, then your Spring Cloud Config server will register the change, and Spring Boot applications can synchronise with this change.
 
-To allow your Springboot application to reload configuration for beans, you must annotate beans/configuration classes with `@RefreshScope`. If you annotate the primary application class, then all configuration can be reloaded. Here is an example application class (from the `example-service` project):
+To allow your Spring Boot application to reload configuration for beans, you must annotate beans/configuration classes with `@RefreshScope`. If you annotate the primary application class, then all configuration can be reloaded. Here is an example application class (from the `example-service` project):
 
 ```java
 @SpringBootApplication
@@ -47,4 +47,4 @@ Exercise
 
 Magic
 -----
-It is possible to set the log level for a Springboot application by posting to the `env` endpoint, e.g. `curl -X POST localhost:8081/env -d logging.level.com=DEBUG`, but this does not always work. This may be a permissions issue, but nevertheless, it is not a guaranteed solution in all cases.
+It is possible to set the log level for a Spring Boot application by posting to the `env` endpoint, e.g. `curl -X POST localhost:8081/env -d logging.level.com=DEBUG`, but this does not always work. This may be a permissions issue, but nevertheless, it is not a guaranteed solution in all cases.
